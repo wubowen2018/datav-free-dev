@@ -107,6 +107,11 @@ export default {
                     left: -30,
                     right: -30
                 },
+                toolbox: {
+                    feature: {
+                        saveAsImage: {}
+                    }
+                },
                 tooltip:{
                     trigger: 'axis',
                     axisPointer: {
