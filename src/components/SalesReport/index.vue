@@ -136,6 +136,7 @@ export default {
         },3000)
 
     },
+    // 钩子函数 在vue页面销毁前调用，解决挂载时多生成定时器问题
     destroyed(){
         this.task && clearInterval(this.task)
     }
@@ -144,7 +145,9 @@ export default {
 </script>
 <style lang='scss' scoped>
     .sales-report{
+        /** 采用弹性布局 */
         display: flex;
+        /** 竖着排列 */
         flex-direction: column;
         width: 100%;
         height: 100%;
@@ -152,6 +155,7 @@ export default {
         box-shadow: 0 2px 8px rgba(4,9,20,.03),0 2px 8px rgba(4,9,20,.03),0 2px 8px rgba(4,9,20,.03),0 2px 8px rgba(4,9,20,.03);
         .header{
             display: flex;
+            /** 居中对齐 */
             align-items: center;
             width: 100%;
             height: 50px;
@@ -167,6 +171,7 @@ export default {
             flex-direction: column;
             width: 100%;
             padding: 0 28px;
+            /** 使得border不会额外占用像素 */
             box-sizing: border-box;
             .content-title-wraper{
                 padding-top: 28px;
@@ -205,6 +210,7 @@ export default {
             .content-circle-wraper{
                 display: flex;
                 align-items: center;
+                /** 横向居中 */
                 justify-content: center;
                 margin-top: 20px;
                 .circle{
@@ -287,8 +293,9 @@ export default {
                             border-radius: 3.5px;
                             background: #fff;
                             opacity: 0;
-                            animation: progress-active 2s ease infinite;
+                            animation: progress-active 2s ease infinite; /** 引用动画 */
                         }
+                        /* 自定义的动画 */
                         @keyframes progress-active {
                             from {
                                 width: 0;
